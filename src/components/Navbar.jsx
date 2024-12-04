@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
 
+    const {user, logOutUser, loading} = useContext(AuthContext)
+    console.log(user?.photoURL);
+    console.log(loading);
 
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allSportsEquipment'>All Sports Equipment</NavLink></li>
     </>
+
+    const handleLogOutUser = () => {
+        logOutUser();
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Logout successful",
+            showConfirmButton: false,
+            timer: 2000
+          });
+    }
 
 
     return (
@@ -43,8 +60,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 pr-0">
-                    <Link className='btn bg-accent' to='/login'>Login</Link>
-                    <Link className='btn bg-accent' to='/signUp'>SignUp</Link>
+                    {
+                        (user && user.photoURL) ?<div className='flex items-center gap-2'>
+                            <img className='h-10 w-10 rounded-full' id='userImg' src={user?.photoURL} alt="" />
+                            <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
+                            <Link onClick={handleLogOutUser} className='btn bg-accent'>Logout</Link>
+                        </div> :<div>
+                            <Link className='btn bg-accent' to='/login'>Login</Link>
+                            <Link className='btn bg-accent' to='/signup'>SignUp</Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

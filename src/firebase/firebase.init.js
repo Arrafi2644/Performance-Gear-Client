@@ -6,14 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCbMPktyXtnaF5mGo0s06SZ_ynkk0hxPNM",
-  authDomain: "performance-gear.firebaseapp.com",
-  projectId: "performance-gear",
-  storageBucket: "performance-gear.firebasestorage.app",
-  messagingSenderId: "755428081991",
-  appId: "1:755428081991:web:da7cb853d8201d00d80c62"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
