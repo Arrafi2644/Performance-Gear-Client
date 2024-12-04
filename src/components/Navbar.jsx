@@ -13,6 +13,8 @@ const Navbar = () => {
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allSportsEquipment'>All Sports Equipment</NavLink></li>
+    <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
+    <li><NavLink to='/myEquipmentList'>My Equipment List</NavLink></li>
     </>
 
     const handleLogOutUser = () => {

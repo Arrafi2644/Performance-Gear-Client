@@ -4,6 +4,9 @@ import Home from "../pages/Home";
 import AllEquipment from "../pages/AllEquipment";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import AddEquipment from "../pages/AddEquipment";
+import MyEquipmentList from "../pages/MyEquipmentList";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -25,6 +28,14 @@ const Router = createBrowserRouter([
         {
           path: "/signup",
           element: <Signup></Signup>
+        },
+        {
+          path: "/addEquipment",
+          element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
+        },
+        {
+          path: "/myEquipmentList",
+          element: <PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>
         }
       ]
     },
