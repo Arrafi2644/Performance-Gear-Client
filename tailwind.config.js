@@ -8,6 +8,12 @@ export default {
     extend: {
       fontFamily: {
         'bai-jamjuree': '["Bai Jamjuree", "sans-serif"]'
+      },
+      colors:{
+        primary: '#1ABC9C',
+        secondary: '#2C3E50',
+        third: '#ECF0F1',
+        accent: '#DEAA79'
       }
     },
   },
