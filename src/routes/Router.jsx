@@ -9,6 +9,8 @@ import MyEquipmentList from "../pages/MyEquipmentList";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Details";
 import UpdateEquipment from "../pages/UpdateEquipment";
+import SportsCategories from "../components/SportsCategories";
+import CategoryProducts from "../components/CategoryProducts";
 
 const Router = createBrowserRouter([
     {
@@ -17,7 +19,20 @@ const Router = createBrowserRouter([
       children: [
         {
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            children: [
+              {
+                path: "/",
+                element: <SportsCategories></SportsCategories>,
+                // children: [
+                //   {
+                //     path: "/myEquipmentList/category/:category",
+                //     element: <CategoryProducts></CategoryProducts>,
+                //     loader: ({params})=> fetch(`http://localhost:5000/equipments/category/${params.category}`)
+                //   }
+                // ]
+              }
+            ]
         },
         {
           path: "/allSportsEquipment",

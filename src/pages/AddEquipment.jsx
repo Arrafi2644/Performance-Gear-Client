@@ -11,7 +11,7 @@ const AddEquipment = () => {
 
         const form = e.target;
         const name = form.name.value;
-        const category = form.category.value;
+        const category = form.category.value.toLowerCase();
         const price = form.price.value;
         const available = form.available.value;
         const rating = form.rating.value;
