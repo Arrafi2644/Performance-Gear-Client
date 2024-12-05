@@ -15,10 +15,10 @@ const ProductCard = ({ product }) => {
             <div className="mt-6 space-y-4 grow " >
                 <div className='flex justify-between items-center w-full gap-4'>
                     <h2 className='font-medium '>Name: {name}</h2>
-                    <p className='font-medium '>Category: {category}</p>
+                    <p className='font-medium '>Price: {price} Taka</p>
                 </div>
                 <div className='flex justify-between items-center w-full gap-4'>
-                    <p className='font-medium '>Price: {price}</p>
+                    <p className='font-medium '>Category: {category}</p>
                     <p className='font-medium '>Available: {available}</p>
                 </div>
                 <div className='flex justify-between items-center w-full gap-4'>

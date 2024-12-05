@@ -38,12 +38,12 @@ const Router = createBrowserRouter([
         {
           path: "/myEquipmentList/user/:email",
           element: <PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/equipments/user/${params.email}`)
+          loader: ({params})=>fetch(`https://performance-gear-server.vercel.app/equipments/user/${params.email}`)
         },
         {
           path: "/details/:id",
-          element: <Details></Details>,
-          loader: ({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
+          element: <PrivateRoute><Details></Details></PrivateRoute>,
+          loader: ({params})=>fetch(`https://performance-gear-server.vercel.app/equipments/${params.id}`)
         }
       ]
     },
