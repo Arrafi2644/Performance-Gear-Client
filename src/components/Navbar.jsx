@@ -7,14 +7,15 @@ import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
 
     const {user, logOutUser, loading} = useContext(AuthContext)
-    console.log(user?.photoURL);
-    console.log(loading);
+    // console.log(user?.photoURL);
+    // console.log(loading);
+    // console.log(user)
 
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allSportsEquipment'>All Sports Equipment</NavLink></li>
     <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
-    <li><NavLink to='/myEquipmentList'>My Equipment List</NavLink></li>
+    <li><NavLink to={`/myEquipmentList/user/${user?.email}`}>My Equipment List</NavLink></li>
     </>
 
     const handleLogOutUser = () => {

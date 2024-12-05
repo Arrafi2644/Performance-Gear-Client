@@ -4,8 +4,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllEquipment = () => {
     const loadedEquipments = useLoaderData()
-    // const {_id, name, category, price, available} = loadedEquipment;
-
     const handleDetails = (_id) => {
         console.log(_id);
 
@@ -15,6 +13,7 @@ const AllEquipment = () => {
             console.log(data);
         })
     }
+
 
     return (
         <div className='max-w-7xl w-11/12 mx-auto my-10'>

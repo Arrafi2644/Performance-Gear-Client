@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
                     src={image}
                     alt="product" />
             </figure>
-            <div className="mt-6 space-y-4 " >
+            <div className="mt-6 space-y-4 grow " >
                 <div className='flex justify-between items-center w-full gap-4'>
                     <h2 className='font-medium '>Name: {name}</h2>
                     <p className='font-medium '>Category: {category}</p>
@@ -36,7 +36,10 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
 
-                <div className="card-actions justify-center">
+                
+            </div>
+            <div>
+            <div className="card-actions justify-center mt-6">
                     <Link to={`/details/${_id}`} className="btn bg-accent w-full">View Details</Link>
                 </div>
             </div>
