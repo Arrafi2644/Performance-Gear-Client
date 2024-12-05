@@ -7,8 +7,8 @@ const Login = () => {
 
     const { signInUser, signInWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
-    const {pathname} = useLocation()
-    console.log(pathname);
+    const {pathname, state} = useLocation()
+    console.log(pathname, state);
 
     const handleLoginUser = (e) => {
         e.preventDefault()
@@ -27,10 +27,10 @@ const Login = () => {
                     icon: "success",
                     title: "Successfully login",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 1500
                 });
 
-                navigate(`${pathname ? pathname : '/'}`)
+                navigate(`${state ? state : '/'}`)
 
             })
             .catch(error => {
@@ -40,7 +40,7 @@ const Login = () => {
                     icon: "error",
                     title: "Invalid user email or password!",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 1500
                 });
             })
     }
@@ -53,9 +53,9 @@ const Login = () => {
                 icon: "success",
                 title: "Signup successfully!",
                 showConfirmButton: false,
-                timer: 2000
+                timer: 1500
               });
-            navigate('/')
+              navigate(`${state ? state : '/'}`)
         })
         .catch(error => {
             Swal.fire({
@@ -63,7 +63,7 @@ const Login = () => {
                 icon: "error",
                 title: "Something went wrong ! Try again",
                 showConfirmButton: false,
-                timer: 2000
+                timer: 1500
               });
         })
     }

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
-    const { _id, name, image, category, price, rating, customization, details, deliveryTime, available } = equipment;
+    const { _id, name, image, category, price, rating, customization, description, deliveryTime, available } = equipment;
     console.log(equipments);
 
     const handleDelete = (_id) => {
@@ -53,26 +54,27 @@ const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
                 <img className='w-full h-52 object-cover rounded-lg' src={image} alt="" />
             </div>
             <div className='font-medium space-y-4 grow'>
-                <div className='flex justify-between items-center gap-6'>
+                {/* <div className='flex justify-between items-center gap-6'> */}
                     <h2>Name: {name}</h2>
                     <p>Category: {category}</p>
-                </div>
-                <div className='flex justify-between items-center gap-6'>
+                {/* </div> */}
+                {/* <div className='flex justify-between items-center gap-6'> */}
                     <p>Price: {price} Taka</p>
                     <p>Available: {available}</p>
-                </div>
-                <div className='flex justify-between items-center gap-6'>
+                {/* </div> */}
+                {/* <div className='flex justify-between items-center gap-6'> */}
                     <p>Rating: {rating}</p>
                     <p>Delivery Time: {deliveryTime} Day</p>
-                </div>
-                <div className='flex justify-between items-center gap-6'>
+                {/* </div> */}
+                
+                {/* <div className='flex justify-between items-center gap-6'> */}
                     <p>Customization: {customization}</p>
-                    <p>Details: {details}</p>
-                </div>
+                    <p>Details: {description}</p>
+                {/* </div> */}
             </div>
             <div className='grid grid-cols-2 gap-6'>
-                <button className="btn ">Update</button>
-                <button onClick={() => handleDelete(_id)} className="btn ">Delete</button>
+                <Link to={`/update/${_id}`} className="btn bg-accent">Update</Link>
+                <button onClick={() => handleDelete(_id)} className="btn bg-accent">Delete</button>
             </div>
         </div>
     );

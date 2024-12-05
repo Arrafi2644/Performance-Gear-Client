@@ -8,6 +8,7 @@ import AddEquipment from "../pages/AddEquipment";
 import MyEquipmentList from "../pages/MyEquipmentList";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Details";
+import UpdateEquipment from "../pages/UpdateEquipment";
 
 const Router = createBrowserRouter([
     {
@@ -44,6 +45,11 @@ const Router = createBrowserRouter([
           path: "/details/:id",
           element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({params})=>fetch(`https://performance-gear-server.vercel.app/equipments/${params.id}`)
+        },
+        {
+          path: "/update/:id",
+          element: <UpdateEquipment></UpdateEquipment>,
+          loader: ({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
         }
       ]
     },

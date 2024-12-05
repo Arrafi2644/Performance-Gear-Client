@@ -22,8 +22,6 @@ const AddEquipment = () => {
         const userEmail = user.email;
         const userName = user.displayName;
 
-        console.log(description);
-
         const equipment = {name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName}
         console.log(equipment);
 
@@ -55,7 +53,7 @@ const AddEquipment = () => {
         <div className="hero bg-third min-h-screen  p-12 rounded-lg">
             <div className="hero-content flex-col">
                 <div className="text-center">
-                    <h1 className="text-4xl font-bold">Add New Equipment</h1>
+                    <h1 className="text-4xl font-bold mb-2">Add New Equipment</h1>
                     <p className="py-6 w-11/12 md:w-4/5 lg:w-3/5 mx-auto" >
                     Add new sports equipment effortlessly to expand your inventory and provide customers with top-quality gear for every game and workout.
                     </p>
@@ -111,6 +109,18 @@ const AddEquipment = () => {
                             </label>
                             <input name='available' type="text" placeholder="available quantity" className="input input-bordered" required />
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User Name</span>
+                            </label>
+                            <input defaultValue={user.displayName} readOnly name='userName' type="text" placeholder="available quantity" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User Email</span>
+                            </label>
+                            <input defaultValue={user.email} readOnly name='userEmail' type="text" placeholder="available quantity" className="input input-bordered" required />
+                        </div>
                         <div className="form-control col-span-1 md:col-span-2">
                             <label className="label">
                                 <span className="label-text">Description</span>
@@ -119,6 +129,7 @@ const AddEquipment = () => {
                             <textarea  name='description' className="textarea  resize-none border-gray-300
                              " placeholder="description" required></textarea>
                         </div>
+                        
                         
                         <div className="form-control mt-6 col-span-1 md:col-span-2">
                             <input className='btn bg-accent' type="submit" value="Add Equipment" />
