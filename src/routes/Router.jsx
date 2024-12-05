@@ -7,6 +7,7 @@ import Signup from "../pages/Signup";
 import AddEquipment from "../pages/AddEquipment";
 import MyEquipmentList from "../pages/MyEquipmentList";
 import PrivateRoute from "./PrivateRoute";
+import Details from "../pages/Details";
 
 const Router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const Router = createBrowserRouter([
         {
           path: "/myEquipmentList",
           element: <PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>
+        },
+        {
+          path: "/details/:id",
+          element: <Details></Details>,
+          loader: ({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
         }
       ]
     },

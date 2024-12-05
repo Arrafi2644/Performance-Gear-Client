@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -7,6 +7,8 @@ const Login = () => {
 
     const { signInUser, signInWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
+    const {pathname} = useLocation()
+    console.log(pathname);
 
     const handleLoginUser = (e) => {
         e.preventDefault()
@@ -28,7 +30,7 @@ const Login = () => {
                     timer: 2000
                 });
 
-                navigate('/')
+                navigate(`${pathname ? pathname : '/'}`)
 
             })
             .catch(error => {

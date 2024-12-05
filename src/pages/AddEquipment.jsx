@@ -18,10 +18,13 @@ const AddEquipment = () => {
         const customization = form.customization.value;
         const image = form.image.value;
         const deliveryTime = form.deliveryTime.value;
+        const description = form.description.value;
         const userEmail = user.email;
         const userName = user.displayName;
 
-        const equipment = {name, category, price, available, rating, customization, image, deliveryTime, userEmail, userName}
+        console.log(description);
+
+        const equipment = {name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName}
         console.log(equipment);
 
         fetch('https://performance-gear-server.vercel.app/equipments', {
@@ -107,6 +110,14 @@ const AddEquipment = () => {
                                 <span className="label-text">Available Quantity</span>
                             </label>
                             <input name='available' type="text" placeholder="available quantity" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control col-span-1 md:col-span-2">
+                            <label className="label">
+                                <span className="label-text">Description</span>
+                            </label>
+                            {/* <input type="text"  className="input input-bordered" required /> */}
+                            <textarea  name='description' className="textarea  resize-none border-gray-300
+                             " placeholder="description" required></textarea>
                         </div>
                         
                         <div className="form-control mt-6 col-span-1 md:col-span-2">

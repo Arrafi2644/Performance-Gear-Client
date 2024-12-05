@@ -68,7 +68,7 @@ const Navbar = () => {
                             <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
                             <Link onClick={handleLogOutUser} className='btn bg-accent'>Logout</Link>
                         </div> :<div>
-                            <Link className='btn bg-accent' to='/login'>Login</Link>
+                            <Link className='btn bg-accent mr-2' to='/login'>Login</Link>
                             <Link className='btn bg-accent' to='/signup'>SignUp</Link>
                         </div>
                     }
