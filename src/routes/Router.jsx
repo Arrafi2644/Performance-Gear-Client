@@ -20,7 +20,7 @@ const Router = createBrowserRouter([
         {
           path: "/allSportsEquipment",
           element: <AllEquipment></AllEquipment>,
-          loader: ()=>fetch("http://localhost:5000/equipments")
+          loader: ()=>fetch("https://performance-gear-server.vercel.app/equipments")
         },
         {
           path: "/login",
