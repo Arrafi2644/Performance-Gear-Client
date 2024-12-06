@@ -30,7 +30,7 @@ const Router = createBrowserRouter([
                 //   {
                 //     path: "/myEquipmentList/category/:category",
                 //     element: <CategoryProducts></CategoryProducts>,
-                //     loader: ({params})=> fetch(`http://localhost:5000/equipments/category/${params.category}`)
+                //     loader: ({params})=> fetch(`https://performance-gear-server.vercel.app/equipments/category/${params.category}`)
                 //   }
                 // ]
               }
@@ -66,7 +66,7 @@ const Router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <UpdateEquipment></UpdateEquipment>,
-          loader: ({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
+          loader: ({params}) => fetch(`https://performance-gear-server.vercel.app/equipments/${params.id}`)
         }
       ]
     },

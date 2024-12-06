@@ -35,7 +35,7 @@ const Navbar = () => {
             <div className="navbar  max-w-7xl w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -55,7 +55,7 @@ const Navbar = () => {
                            {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl pl-0">Performance Gear</a>
+                    <a className="btn btn-ghost text-base md:text-xl pl-0">Performance Gear</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

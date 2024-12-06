@@ -30,7 +30,7 @@ const UpdateEquipment = () => {
         const equipment = {name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName}
         console.log(equipment);
 
-        fetch(`http://localhost:5000/equipments/${_id}`, {
+        fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type' : 'application/json'
@@ -56,7 +56,7 @@ const UpdateEquipment = () => {
     return (
         <div>
                     <div className='max-w-7xl w-11/12 mx-auto my-10'>
-        <div className="hero bg-third min-h-screen  p-12 rounded-lg">
+        <div className="hero bg-third min-h-screen rounded-lg">
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold">Update Equipment</h1>
