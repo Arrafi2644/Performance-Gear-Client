@@ -26,11 +26,23 @@ const Details = () => {
                 <h3>Category: {category}</h3>
                 <p>Price: {price}</p>
                 <p>Customization: {customization}</p>
-                <p>Rating : {rating}</p>
+                <div className="rating rating-sm items-center mr-2">
+                    <p className='font-medium mr-2'>Rating: </p>
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input
+                            type="radio"
+                            name="rating-7"
+                            className="mask mask-star-2 bg-orange-400"
+                             />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    </div>
+                    ({rating})
                 <p>Available: {available}</p>
                 <p>Description: {description}</p>
                 <p>Delivery Time: {deliveryTime} day</p>
-
+                <button className="btn bg-accent mt-4">Purchase now</button>
             </div>
         </div>
         </div>

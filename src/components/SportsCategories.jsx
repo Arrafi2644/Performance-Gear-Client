@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import CategoryProducts from './CategoryProducts';
+import '../components/MyStyle.css'
 
 const SportsCategories = () => {
     const [allEquipments, setAllEquipments] = useState([])
     const [categories, setCategories] = useState([])
     const [showProducts, setShowProducts] = useState([])
+    const [isActive, setIsActive] = useState(false)
 
     useEffect(()=>{
         fetch("http://localhost:5000/equipments")
@@ -28,10 +30,12 @@ const SportsCategories = () => {
         }
          
     })
-    // console.log(categories);
+    console.log(categories);
+    console.log(showProducts);
 
     const handleShowCategoryProducts = (category) => {
         console.log(category);
+        setIsActive(true)
 
         fetch(`http://localhost:5000/equipments/category/${category}`)
         .then(res => res.json())
@@ -41,6 +45,27 @@ const SportsCategories = () => {
         })
     }
 
+    const firstCategory = categories[0]
+    console.log(firstCategory);
+ 
+
+    console.log(showProducts)
+    // console.log(products)
+    // if(showProducts.length < 1) {
+       
+    // }
+
+     useEffect(()=>{
+        fetch(`http://localhost:5000/equipments/category/${firstCategory}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setShowProducts(data)
+        })
+     }, [firstCategory])
+
+     
+
     return (
         <div className='my-16'>
             <h2 className='text-3xl text-center font-bold mb-2'>Shop by Sports Category</h2>
@@ -48,12 +73,12 @@ const SportsCategories = () => {
             {/* Sports category {categories.length} */}
             <div className='flex flex-wrap gap-4 justify-center'>
             {
-                categories.map(category =>  <button key={categories.indexOf(category)} onClick={()=>handleShowCategoryProducts(category)} className='btn'>{category[0].toUpperCase() + category.slice(1)}</button>)
+                categories.map(category =>  <button key={categories.indexOf(category)} onClick={()=>handleShowCategoryProducts(category)} className={`btn bg-accent`}>{category[0].toUpperCase() + category.slice(1)}</button>)
             }
             </div>
             <div>
                 {/* <Outlet></Outlet> */}
-                <CategoryProducts showProducts={showProducts}></CategoryProducts>
+                <CategoryProducts showProducts={showProducts} setShowProducts={setShowProducts} categories={categories}></CategoryProducts>
             </div>
         </div>
     );

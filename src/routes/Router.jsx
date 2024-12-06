@@ -11,11 +11,13 @@ import Details from "../pages/Details";
 import UpdateEquipment from "../pages/UpdateEquipment";
 import SportsCategories from "../components/SportsCategories";
 import CategoryProducts from "../components/CategoryProducts";
+import ErrorPage from "../pages/ErrorPage";
 
 const Router = createBrowserRouter([
     {
       path: "/",
       element: <MainTemplate></MainTemplate>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",
