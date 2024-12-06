@@ -8,7 +8,7 @@ import { BiSupport } from "react-icons/bi";
 
 const ServiceHighlights = () => {
     return (
-        <div className='grid grid-cols-2 md:grid-cols-4 my-10 py-6 shadow-lg'>
+        <div className='grid grid-cols-2 gap-6 md:gap-0 md:grid-cols-4 my-10 py-6 pl-2 shadow-lg'>
             <div className='flex gap-2 border-r mr-1'>
                 <div className='text-5xl font-bold text-primary'>
                     <TbTruckDelivery></TbTruckDelivery>

@@ -5,6 +5,7 @@ import SportsCategories from '../components/SportsCategories';
 import { Outlet } from 'react-router-dom';
 import ServiceHighlights from '../components/ServiceHighlights';
 import Articles from '../components/Articles';
+import BrandPartner from '../components/BrandPartner';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
           {/* <SportsCategories></SportsCategories> */}
           <ServiceHighlights></ServiceHighlights>
           <Articles></Articles>
+          <BrandPartner></BrandPartner>
         </div>
     );
 };
