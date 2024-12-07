@@ -4,6 +4,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
 import auth from '../firebase/firebase.init';
+import { Zoom } from 'react-awesome-reveal';
 
 const Signup = () => {
 
@@ -86,8 +87,9 @@ const Signup = () => {
     }
 
     return (
-        <div className='max-w-7xl w-11/12 mx-auto my-10'>
-            <div className="hero bg-third min-h-screen rounded-lg">
+        <Zoom>
+            <div className='max-w-7xl w-11/12 mx-auto my-10'>
+            <div className="hero bg-third min-h-screen rounded-lg py-8">
                 <div className="hero-content flex-col">
                     <div className="text-center">
                         <h1 className="text-4xl font-bold">Signup now!</h1>
@@ -132,6 +134,7 @@ const Signup = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

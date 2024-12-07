@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Zoom } from 'react-awesome-reveal';
 
 const Login = () => {
 
@@ -69,8 +70,9 @@ const Login = () => {
     }
 
     return (
-        <div className='max-w-7xl w-11/12 mx-auto my-10'>
-            <div className="hero bg-third min-h-screen rounded-lg">
+        <Zoom>
+            <div className='max-w-7xl w-11/12 mx-auto my-10'>
+            <div className="hero bg-third min-h-screen rounded-lg py-8">
                 <div className="hero-content flex-col">
                     <div className="text-center">
                         <h1 className="text-4xl font-bold">Login now!</h1>
@@ -106,6 +108,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Fade } from 'react-awesome-reveal';
 
 const AddEquipment = () => {
     
@@ -50,6 +51,7 @@ const AddEquipment = () => {
 
     return (
         <div className='max-w-7xl w-11/12 mx-auto my-10'>
+        <Fade direction='down'>
         <div className="hero bg-third min-h-screen rounded-lg">
             <div className="hero-content flex-col">
                 <div className="text-center">
@@ -138,6 +140,7 @@ const AddEquipment = () => {
                 </div>
             </div>
         </div>
+        </Fade>
     </div>
     );
 };

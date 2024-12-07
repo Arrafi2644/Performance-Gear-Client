@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { FaEye } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllEquipment = () => {
-    const loadedEquipments = useLoaderData()
-    console.log(loadedEquipments);
+    const equipments = useLoaderData()
+    // console.log(loadedEquipments);
+    const [loadedEquipments, setLoadedEquipments] = useState(equipments)
     const handleDetails = (_id) => {
         console.log(_id);
 
@@ -15,13 +17,35 @@ const AllEquipment = () => {
         })
     }
 
+    const handleSort = () => {
+        const allEquipments = loadedEquipments;
+        console.log(allEquipments);
+
+        const sortAllEquipments =  [...allEquipments].sort(function(a, b){
+            return a.price - b.price
+        })
+
+        console.log(sortAllEquipments);
+       
+        setLoadedEquipments(sortAllEquipments);
+
+    }
+
+    console.log(loadedEquipments);
+
 
     return (
         <div className='max-w-7xl w-11/12 mx-auto my-10'>
-            <h2 className='text-3xl text-center font-bold mb-2'>Explore All Equipment</h2>
-            <p className='w-full md:w-4/5 mx-auto text-center mb-8'>Browse our complete collection of premium sports equipment, designed to enhance performance and meet the needs of every athlete</p>
+            {/* <h2 className='text-3xl text-center font-bold mb-2'>Explore All Equipment</h2>
+            <p className='w-full md:w-4/5 mx-auto text-center mb-8'>Browse our complete collection of premium sports equipment, designed to enhance performance and meet the needs of every athlete</p> */}
             <div>
-                <div className="overflow-x-auto">
+                <Fade direction='right' duration={2000}>
+                <div className='my-6 '>
+                    <button onClick={handleSort} className="btn bg-accent">Sort By Price</button>
+                </div>
+                </Fade>
+               <Fade direction='left' duration={2000}>
+               <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead>
@@ -55,6 +79,7 @@ const AllEquipment = () => {
                         </tbody>
                     </table>
                 </div>
+               </Fade>
             </div>
         </div>
     );

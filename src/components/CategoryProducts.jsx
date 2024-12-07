@@ -16,7 +16,7 @@ const CategoryProducts = ({showProducts, setShowProducts, categories}) => {
 
             {
                
-                showProducts.map(product => <ProductCard product={product}></ProductCard>) 
+                showProducts.map(product => <ProductCard key={product._id} product={product}></ProductCard>) 
             }
             </div>
         </div>
