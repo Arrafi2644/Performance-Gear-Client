@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import { FaLeftLong } from 'react-icons/fa6';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
@@ -15,7 +16,8 @@ const Details = () => {
 
 
     return (
-        <div className='max-w-7xl w-11/12 mx-auto mt-6 mb-10'>
+       <Zoom>
+         <div className='max-w-7xl w-11/12 mx-auto mt-6 mb-10'>
         <Link onClick={handleBack} className='flex items-center gap-1 btn bg-accent max-w-28 mb-8'><span><FaLeftLong></FaLeftLong></span> Back</Link>
         <div className=' grid grid-cols-1  md:grid-cols-3 gap-6 border rounded-lg p-6'>
             <div className='grid-cols-1'>
@@ -46,6 +48,7 @@ const Details = () => {
             </div>
         </div>
         </div>
+       </Zoom>
     );
 };
 

@@ -31,7 +31,7 @@ const Banner = () => {
            </div>
         </div>
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
         <div className='bg-slide3 bg-cover bg-center h-[500px] flex items-center justify-center text-center pl-10 md:pl-16 lg:pl-20'>
            <div className='space-y-2'>
             <h2 className=' text-3xl md:text-4xl text-primary font-bold'>Stay Warm, Perform Better</h2>
@@ -39,7 +39,7 @@ const Banner = () => {
             <button className="btn font-semibold bg-accent">Explore Collection</button>
            </div>
         </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
         <div className='bg-slide4 bg-cover bg-center h-[500px] flex items-center justify-center text-center pl-10 md:pl-16 lg:pl-20'>
            <div className='space-y-2'>

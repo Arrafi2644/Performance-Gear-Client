@@ -17,10 +17,10 @@ export default {
       },
       backgroundImage:{
         slide1: "url('https://i.ibb.co.com/3zTPYt5/pexels-kindelmedia-6572963.jpg')",
-        slide2: "url('https://i.ibb.co.com/mSGgw5v/pexels-mart-production-8032923.jpg')",
-        slide3: "url('https://i.ibb.co.com/XjxjVLZ/pexels-kindelmedia-6572962.jpg')",
-        slide4: "url('https://i.ibb.co.com/MfNsKD7/pexels-anhleephoto-29582092.jpg')",
-        errorPage: "url('https://i.ibb.co.com/M2FF885/image.png')",
+        slide2: "url('https://i.ibb.co.com/bmwRy1K/jpeg-optimizer-pexels-anhleephoto-29582092.jpg')",
+        slide3: "url('https://i.ibb.co.com/z7gC4DS/jpeg-optimizer-pexels-kindelmedia-6572962.jpg')",
+        slide4: "url('https://i.ibb.co.com/ckD4ZVT/jpeg-optimizer-pexels-mart-production-8032923.jpg')",
+        errorPage: "url('https://i.ibb.co.com/ckD4ZVT/jpeg-optimizer-pexels-mart-production-8032923.jpg')",
 
       }
     },
