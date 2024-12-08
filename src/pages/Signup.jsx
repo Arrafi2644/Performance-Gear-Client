@@ -111,10 +111,10 @@ const Signup = () => {
                             timer: 2000
                         });
                     }).catch(err => {
-                        console.log(err);
+                        // console.log(err);
                     })
             }).catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
                 Swal.fire({
                     position: "center",
                     icon: "error",

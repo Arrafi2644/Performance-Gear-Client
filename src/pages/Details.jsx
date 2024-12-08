@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import { FaLeftLong } from 'react-icons/fa6';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const Details = () => {
+    const [loading, setLoading] = useState(true)
     const equipment = useLoaderData()
     const navigate = useNavigate()
     const {name, category, price, description, available, rating, customization, image, deliveryTime} = equipment;
     // console.log(name, category, price, image, description, rating, customization, deliveryTime, available);
     // console.log(image);
  
+    useEffect(()=>{
+        if(equipment){
+            setLoading(false)
+        }
+    }, [equipment])
+
     const handleBack = () =>{
         navigate(-1)
     }
