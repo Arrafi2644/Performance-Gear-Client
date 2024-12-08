@@ -31,7 +31,7 @@
 //         }
          
 //     })
-//     console.log(categories);
+    // console.log(categories);
 //     console.log(showProducts);
 
 //     const handleShowCategoryProducts = (category) => {
@@ -111,7 +111,7 @@ const SportsCategories = () => {
     const [activeCategory, setActiveCategory] = useState("");  // Track active category
 
     useEffect(() => {
-        fetch("https://performance-gear-server.vercel.app/equipments")
+        fetch("https://performance-gear-server.vercel.app/allEquipments")
             .then(res => res.json())
             .then(data => setAllEquipments(data))
     }, []);
@@ -132,9 +132,10 @@ const SportsCategories = () => {
     const handleShowCategoryProducts = (category) => {
         setActiveCategory(category); // Set the active category when clicked
 
-        fetch(`https://performance-gear-server.vercel.app/equipments/category/${category}`)
+        fetch(`https://performance-gear-server.vercel.app/allEquipments/category/${category}`)
             .then(res => res.json())
             .then(data => {
+                // console.log(data);
                 setShowProducts(data);
             });
     };

@@ -8,13 +8,13 @@ import { Zoom } from 'react-awesome-reveal';
 
 const Signup = () => {
 
-    const {signUpUser, signInWithGoogle} = useContext(AuthContext)
+    const {signUpUser, signInWithGoogle, setUser} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSignUpUser = (e) => {
         e.preventDefault();
 
-        console.log("clickdd");
+        // console.log("clickdd");
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -22,7 +22,7 @@ const Signup = () => {
         const password = form.password.value;
 
         const user = {name, email, photo, password}
-        console.log(user);
+        // console.log(user);
 
         if (password.length < 6) {
             Swal.fire({
@@ -63,9 +63,9 @@ const Signup = () => {
         signUpUser(email, password)
         .then(result => {
             // console.log(result);
-
-              updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
-              .then(result => {
+            updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
+            .then(result => {
+                setUser(result)
                 
                   Swal.fire({
                       position: "center",

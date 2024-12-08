@@ -24,7 +24,7 @@ const AddEquipment = () => {
         const userName = user.displayName;
 
         const equipment = {name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName}
-        console.log(equipment);
+        // console.log(equipment);
 
         fetch('https://performance-gear-server.vercel.app/equipments', {
             method: "POST",

@@ -4,10 +4,10 @@ import Swal from 'sweetalert2';
 
 const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
     const { _id, name, image, category, price, rating, customization, description, deliveryTime, available } = equipment;
-    console.log(equipments);
+    // console.log(equipments);
 
     const handleDelete = (_id) => {
-        console.log(_id)
+        // console.log(_id)
 
         Swal.fire({
             title: "Are you sure?",
@@ -25,7 +25,7 @@ const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -36,7 +36,7 @@ const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
                             // setEquipments(remainingEquipments)
                             const remainingEquipments = equipments.filter(equipment => equipment._id !== _id)
                             setEquipments(remainingEquipments)
-                            console.log(remainingEquipments);
+                            // console.log(remainingEquipments);
                         }
 
                     })
@@ -63,7 +63,21 @@ const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
                     <p>Available: {available}</p>
                 {/* </div> */}
                 {/* <div className='flex justify-between items-center gap-6'> */}
-                    <p>Rating: {rating}</p>
+                   
+                    <div className="rating rating-sm items-center">
+                    <p className='font-medium mr-2'>Rating: </p>
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input
+                            type="radio"
+                            name="rating-7"
+                            className="mask mask-star-2 bg-orange-400"
+                             />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                        <p className='ml-2'>({rating})</p>
+                    </div>
+                
                     <p>Delivery Time: {deliveryTime} Day</p>
                 {/* </div> */}
                 

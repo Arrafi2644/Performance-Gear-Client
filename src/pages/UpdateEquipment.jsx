@@ -26,10 +26,10 @@ const UpdateEquipment = () => {
         const userEmail = user.email;
         const userName = user.displayName;
 
-        console.log(description);
+        // console.log(description);
 
         const equipment = { name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName }
-        console.log(equipment);
+        // console.log(equipment);
 
         fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`, {
             method: "PUT",
@@ -40,7 +40,7 @@ const UpdateEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         position: "top-center",

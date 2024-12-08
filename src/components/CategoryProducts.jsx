@@ -4,11 +4,13 @@ import ProductCard from './ProductCard';
 
 const CategoryProducts = ({showProducts, setShowProducts, categories}) => {
     // const products = useLoaderData()
-    console.log(categories);
+    // console.log(categories);
     // const [products, setProducts] = useState([])
     // const firstCategory = categories[0]
     // const location = useLocation()
     // console.log(firstCategory);
+
+    // console.log(showProducts, showProducts.length);
 
     return (
         <div>

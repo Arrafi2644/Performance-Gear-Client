@@ -9,7 +9,7 @@ import 'swiper/css/autoplay';
 const BrandPartner = () => {
     return (
         <div className='my-16'>
-            <h2 className='text-3xl font-bold mb-4'>Our Brand Partners</h2>
+            <h2 className='text-3xl font-bold mb-4 text-center md:text-left'>Our Brand Partners</h2>
             <div>
                 {
                     <Swiper

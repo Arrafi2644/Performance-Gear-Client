@@ -8,30 +8,30 @@ const AllEquipment = () => {
     // console.log(loadedEquipments);
     const [loadedEquipments, setLoadedEquipments] = useState(equipments)
     const handleDetails = (_id) => {
-        console.log(_id);
+        // console.log(_id);
 
         fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
         })
     }
 
     const handleSort = () => {
         const allEquipments = loadedEquipments;
-        console.log(allEquipments);
+        // console.log(allEquipments);
 
         const sortAllEquipments =  [...allEquipments].sort(function(a, b){
             return a.price - b.price
         })
 
-        console.log(sortAllEquipments);
+        // console.log(sortAllEquipments);
        
         setLoadedEquipments(sortAllEquipments);
 
     }
 
-    console.log(loadedEquipments);
+    // console.log(loadedEquipments);
 
 
     return (

@@ -5,7 +5,7 @@ const Articles = () => {
     return (
         <div className='my-16'>
             <div className='flex items-center justify-between'>
-                <h2 className='text-3xl font-bold mb-4'>Marketplace News</h2>
+                <h2 className='text-3xl font-bold mb-4 text-center md:text-left'>Marketplace News</h2>
                 <Link className='underline text-primary font-medium'>View All Articles</Link>
             </div>
 
