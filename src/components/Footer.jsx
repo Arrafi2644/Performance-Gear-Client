@@ -5,7 +5,7 @@ import { MdMail } from 'react-icons/md';
 
 const Footer = () => {
     return (
-        <div className='bg-third py-16'>
+        <div className='bg-third py-16 text-secondary'>
             <section className='max-w-7xl w-11/12 mx-auto '>
             <footer className="footer grid grid-cols-1 md:grid-cols-4 gap-8 ">
                 <aside className='col-span-1 md:col-span-2'>

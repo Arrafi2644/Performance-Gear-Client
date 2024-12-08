@@ -57,7 +57,7 @@ const UpdateEquipment = () => {
     return (
         <Zoom>
             <div className='max-w-7xl w-11/12 mx-auto my-10'>
-                <div className="hero bg-third min-h-screen rounded-lg">
+                <div className="hero bg-third text-secondary min-h-screen rounded-lg">
                     <div className="hero-content flex-col">
                         <div className="text-center">
                             <h1 className="text-4xl font-bold">Update Equipment</h1>
@@ -132,9 +132,8 @@ const UpdateEquipment = () => {
                                     <label className="label">
                                         <span className="label-text">Description</span>
                                     </label>
-                                    {/* <input type="text"  className="input input-bordered" required /> */}
-                                    <textarea defaultValue={description} name='description' className="textarea  resize-none border-gray-300
-                             " placeholder="description" required></textarea>
+                                    {/* <input type="text"  name='description' placeholder='description' className="input input-bordered" required /> */}
+                                    <textarea defaultValue={description} name='description' className="textarea  resize-none border-gray-300" placeholder="description" required></textarea> 
                                 </div>
 
                                 <div className="form-control mt-6 col-span-1 md:col-span-2">

@@ -71,7 +71,7 @@ const Login = () => {
 
     return (
         <Zoom>
-            <div className='max-w-7xl w-11/12 mx-auto my-10'>
+            <div className='max-w-7xl w-11/12 mx-auto my-10 text-secondary'>
             <div className="hero bg-third min-h-screen rounded-lg py-8">
                 <div className="hero-content flex-col">
                     <div className="text-center">

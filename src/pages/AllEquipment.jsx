@@ -39,7 +39,7 @@ const AllEquipment = () => {
             {/* <h2 className='text-3xl text-center font-bold mb-2'>Explore All Equipment</h2>
             <p className='w-full md:w-4/5 mx-auto text-center mb-8'>Browse our complete collection of premium sports equipment, designed to enhance performance and meet the needs of every athlete</p> */}
             <div>
-                <Fade direction='right' duration={2000}>
+                <Fade direction='left' duration={2000}>
                 <div className='my-6 '>
                     <button onClick={handleSort} className="btn bg-accent">Sort By Price</button>
                 </div>

@@ -20,10 +20,16 @@ export default {
         slide2: "url('https://i.ibb.co.com/bmwRy1K/jpeg-optimizer-pexels-anhleephoto-29582092.jpg')",
         slide3: "url('https://i.ibb.co.com/z7gC4DS/jpeg-optimizer-pexels-kindelmedia-6572962.jpg')",
         slide4: "url('https://i.ibb.co.com/ckD4ZVT/jpeg-optimizer-pexels-mart-production-8032923.jpg')",
-        errorPage: "url('https://i.ibb.co.com/ckD4ZVT/jpeg-optimizer-pexels-mart-production-8032923.jpg')",
+        errorPage: "url('https://i.ibb.co.com/JkrT7J5/404.gif')",
 
       }
     },
   },
   plugins: [require('daisyui'),],
+  daisyui: {
+    themes: [
+      "light",
+      "dark"
+    ],
+  },
 }

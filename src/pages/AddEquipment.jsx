@@ -52,7 +52,7 @@ const AddEquipment = () => {
     return (
         <div className='max-w-7xl w-11/12 mx-auto my-10'>
         <Fade direction='down'>
-        <div className="hero bg-third min-h-screen rounded-lg">
+        <div className="hero bg-third text-secondary min-h-screen rounded-lg">
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-2">Add New Equipment</h1>

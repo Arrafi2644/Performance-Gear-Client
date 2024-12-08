@@ -17,7 +17,7 @@ const Details = () => {
 
     return (
        <Zoom>
-         <div className='max-w-7xl w-11/12 mx-auto mt-6 mb-10'>
+         <div className='max-w-7xl w-11/12 mx-auto mt-6 mb-10 text-secondary'>
         <Link onClick={handleBack} className='flex items-center gap-1 btn bg-accent max-w-28 mb-8'><span><FaLeftLong></FaLeftLong></span> Back</Link>
         <div className=' grid grid-cols-1  md:grid-cols-3 gap-6 border rounded-lg p-6'>
             <div className='grid-cols-1'>

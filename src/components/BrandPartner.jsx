@@ -38,7 +38,7 @@ const BrandPartner = () => {
                             delay: 3000,
                             disableOnInteraction: false,
                         }}
-                        className='shadow-lg'
+                        className='shadow-lg bg-white'
                     >
                         <SwiperSlide className='flex justify-center items-center grayscale-0'>
                             <img className='w-20 mt-3 mx-auto grayscale' src="https://i.ibb.co.com/2SThpjV/image.png" alt="" />

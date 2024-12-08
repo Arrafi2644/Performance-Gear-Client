@@ -24,6 +24,42 @@ const Signup = () => {
         const user = {name, email, photo, password}
         console.log(user);
 
+        if (password.length < 6) {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Password must be longer or equal 6 character.!!!",
+                showConfirmButton: false,
+                timer: 2000
+              });
+            return;
+          }
+      
+          if (!/(?=.*[a-z])/.test(password)) {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "You must include at least one lowercase letter in password.!!!",
+                showConfirmButton: false,
+                timer: 2000
+              });
+            return;
+          }
+      
+          if (!/(?=.*[A-Z])/.test(password)) {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "You must include at least one uppercase letter in password.!!!",
+                showConfirmButton: false,
+                timer: 2000
+              });
+            return;
+          }
+      
+      
+
+
         signUpUser(email, password)
         .then(result => {
             // console.log(result);
@@ -88,7 +124,7 @@ const Signup = () => {
 
     return (
         <Zoom>
-            <div className='max-w-7xl w-11/12 mx-auto my-10'>
+            <div className='max-w-7xl w-11/12 mx-auto my-10 text-secondary'>
             <div className="hero bg-third min-h-screen rounded-lg py-8">
                 <div className="hero-content flex-col">
                     <div className="text-center">

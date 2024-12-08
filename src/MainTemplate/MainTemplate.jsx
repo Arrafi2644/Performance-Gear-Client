@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const MainTemplate = () => {
     return (
-        <div>
+        <div >
             <Navbar></Navbar>
             <div>
                 <Outlet></Outlet>

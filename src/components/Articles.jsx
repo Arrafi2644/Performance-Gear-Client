@@ -10,7 +10,7 @@ const Articles = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                <div className="card card-compact bg-base-100 shadow-xl">
+                <div className="card card-compact bg-base-100 shadow-xl border rounded-lg">
                     <figure className='p-4'>
                         <img
                         className='w-full h-52 object-cover rounded-lg'
@@ -33,7 +33,7 @@ const Articles = () => {
                     </div>
                 </div>
 
-                <div className="card card-compact bg-base-100 shadow-xl">
+                <div className="card card-compact bg-base-100 shadow-xl border rounded-lg">
                     <figure className='p-4'>
                         <img
                         className='w-full h-52 object-cover rounded-lg'
@@ -56,7 +56,7 @@ const Articles = () => {
                     </div>
                 </div>
 
-                <div className="card card-compact bg-base-100 shadow-xl">
+                <div className="card card-compact bg-base-100 shadow-xl border rounded-lg">
                     <figure className='p-4'>
                         <img
                         className='w-full h-52 object-cover rounded-lg'
