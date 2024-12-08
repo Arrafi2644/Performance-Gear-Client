@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import EquipmentCard from '../components/EquipmentCard';
 import { Fade } from 'react-awesome-reveal';
+import { AuthContext } from '../provider/AuthProvider';
 
 const MyEquipmentList = () => {
-    const myEquipments = useLoaderData()
-    const [equipments, setEquipments] = useState(myEquipments);
+    // const myEquipments = useLoaderData()
+    const [equipments, setEquipments] = useState([]);
+    const {user} = useContext(AuthContext)
     // console.log(myEquipments);
+    console.log(user);
+    const email = user?.email;
+    console.log(email);
+
+    useEffect(()=>{
+        fetch(`https://performance-gear-server.vercel.app/equipments/user/${email}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setEquipments(data)
+        })
+    }, [])
+
+
+
     return (
         <div className='max-w-7xl w-11/12 mx-auto my-10'>
             {/* <h2 className='text-3xl text-center font-bold mb-2'>My Equipment List</h2>

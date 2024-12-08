@@ -26,13 +26,6 @@ const Router = createBrowserRouter([
               {
                 path: "/",
                 element: <SportsCategories></SportsCategories>,
-                // children: [
-                //   {
-                //     path: "/myEquipmentList/category/:category",
-                //     element: <CategoryProducts></CategoryProducts>,
-                //     loader: ({params})=> fetch(`https://performance-gear-server.vercel.app/equipments/category/${params.category}`)
-                //   }
-                // ]
               }
             ]
         },
@@ -54,9 +47,9 @@ const Router = createBrowserRouter([
           element: <PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
         },
         {
-          path: "/myEquipmentList/user/:email",
+          path: "/myEquipmentList",
           element: <PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>,
-          loader: ({params})=>fetch(`https://performance-gear-server.vercel.app/equipments/user/${params.email}`)
+          // loader: ({params})=>fetch(`http://localhost:5000/equipments/user/${params.email}`)
         },
         {
           path: "/details/:id",

@@ -3,9 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme" ) ? localStorage.getItem("theme"): "light")
+    const {user, logOutUser, loading} = useContext(AuthContext)
 
     const handleToggle = (e) => {
         if(e.target.checked){
@@ -23,7 +25,6 @@ const Navbar = () => {
 
  
 
-    const {user, logOutUser, loading} = useContext(AuthContext)
     // console.log(user?.photoURL);
     // console.log(loading);
     // console.log(user)
@@ -32,7 +33,7 @@ const Navbar = () => {
     <li><NavLink className={` `} to='/'>Home</NavLink></li>
     <li><NavLink to='/allSportsEquipment'>All Sports Equipment</NavLink></li>
     <li><NavLink to='/addEquipment'>Add Equipment</NavLink></li>
-    <li><NavLink to={`/myEquipmentList/user/${user?.email}`}>My Equipment List</NavLink></li>
+    <li><NavLink to={`/myEquipmentList`}>My Equipment List</NavLink></li>
     </>
 
     const handleLogOutUser = () => {
@@ -103,7 +104,7 @@ const Navbar = () => {
   </svg>
 </label>
                     {
-                        (user && user.photoURL) ?<div className='flex items-center gap-2'>
+                        user ? <div className='flex items-center gap-2'>
                             <img className='h-10 w-10 rounded-full' id='userImg' src={user?.photoURL} alt="" />
                             <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
                             <Link onClick={handleLogOutUser} className="btn bg-accent text-white">Logout</Link>

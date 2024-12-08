@@ -58,14 +58,12 @@ const Signup = () => {
           }
       
       
-
-
         signUpUser(email, password)
         .then(result => {
             // console.log(result);
             updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
             .then(result => {
-                setUser(result)
+                
                 
                   Swal.fire({
                       position: "center",

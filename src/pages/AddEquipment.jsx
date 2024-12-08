@@ -2,10 +2,12 @@ import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
+import { useNavigate } from 'react-router-dom';
 
 const AddEquipment = () => {
     
     const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleAddEquipment = (e) => {
         e.preventDefault();
@@ -44,6 +46,7 @@ const AddEquipment = () => {
                     showConfirmButton: false,
                     timer: 2000
                   });
+                  navigate(`/myEquipmentList/user/${user?.email}`)
             }
         })
     }
