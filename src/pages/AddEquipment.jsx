@@ -46,7 +46,7 @@ const AddEquipment = () => {
                     showConfirmButton: false,
                     timer: 2000
                   });
-                  navigate(`/myEquipmentList/user/${user?.email}`)
+                  navigate(`/myEquipmentList`)
             }
         })
     }
