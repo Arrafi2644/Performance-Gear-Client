@@ -8,7 +8,7 @@ const Products = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/equipments')
+        fetch('https://performance-gear-server.vercel.app/equipments')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[])

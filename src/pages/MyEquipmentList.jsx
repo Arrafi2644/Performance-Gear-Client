@@ -17,7 +17,7 @@ const MyEquipmentList = () => {
     // console.log(email);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/equipments/user/${email}`)
+        fetch(`https://performance-gear-server.vercel.app/equipments/user/${email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -40,7 +40,7 @@ const MyEquipmentList = () => {
             }).then((result) => {
                 if (result.isConfirmed) {
     
-                    fetch(`http://localhost:5000/equipments/${_id}`, {
+                    fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

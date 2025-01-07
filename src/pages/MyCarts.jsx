@@ -11,7 +11,7 @@ const MyCarts = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/carts/${user?.email}`)
+        fetch(`https://performance-gear-server.vercel.app/carts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCarts(data)
@@ -33,7 +33,7 @@ const MyCarts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/carts/${_id}`, {
+                fetch(`https://performance-gear-server.vercel.app/carts/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

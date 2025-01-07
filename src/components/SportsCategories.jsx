@@ -12,7 +12,7 @@ const SportsCategories = () => {
     // const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:5000/allEquipments")
+        fetch("https://performance-gear-server.vercel.app/allEquipments")
             .then(res => res.json())
             .then(data => setAllEquipments(data))
     }, []);
@@ -33,7 +33,7 @@ const SportsCategories = () => {
     const handleShowCategoryProducts = (category) => {
         setActiveCategory(category); // Set the active category when clicked
 
-        fetch(`http://localhost:5000/allEquipments/category/${category}`)
+        fetch(`https://performance-gear-server.vercel.app/allEquipments/category/${category}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

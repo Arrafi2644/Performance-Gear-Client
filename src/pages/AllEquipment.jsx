@@ -20,7 +20,7 @@ const AllEquipment = () => {
     const handleDetails = (_id) => {
         // console.log(_id);
 
-        fetch(`http://localhost:5000/equipments/${_id}`)
+        fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
