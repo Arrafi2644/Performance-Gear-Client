@@ -20,7 +20,7 @@ const EquipmentCard = ({ equipment , equipments, setEquipments}) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`, {
+                fetch(`http://localhost:5000/equipments/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -12,6 +12,7 @@ import UpdateEquipment from "../pages/UpdateEquipment";
 import SportsCategories from "../components/SportsCategories";
 import CategoryProducts from "../components/CategoryProducts";
 import ErrorPage from "../pages/ErrorPage";
+import MyCarts from "../pages/MyCarts";
 
 const Router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const Router = createBrowserRouter([
         {
           path: "/allSportsEquipment",
           element: <AllEquipment></AllEquipment>,
-          loader: ()=>fetch("https://performance-gear-server.vercel.app/allEquipments")
+          loader: ()=>fetch("http://localhost:5000/allEquipments")
         },
         {
           path: "/login",
@@ -51,14 +52,18 @@ const Router = createBrowserRouter([
           element: <PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>,
         },
         {
+          path: "/myCarts",
+          element: <MyCarts></MyCarts>
+        },
+        {
           path: "/details/:id",
           element: <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({params})=>fetch(`https://performance-gear-server.vercel.app/equipments/${params.id}`)
+          loader: ({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
         },
         {
           path: "/update/:id",
           element: <UpdateEquipment></UpdateEquipment>,
-          loader: ({params}) => fetch(`https://performance-gear-server.vercel.app/equipments/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
         }
       ]
     },

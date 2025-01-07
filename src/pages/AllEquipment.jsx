@@ -2,33 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { FaEye } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 
 const AllEquipment = () => {
     const [loading, setLoading] = useState(true)
     const equipments = useLoaderData()
 
-   useEffect(()=>{
-    if(equipments){
-        setLoading(false)
-    }
-   }, [equipments])
+    useEffect(() => {
+        if (equipments) {
+            setLoading(false)
+        }
+    }, [equipments])
     // console.log(loadedEquipments);
+
     const [loadedEquipments, setLoadedEquipments] = useState(equipments)
+
     const handleDetails = (_id) => {
         // console.log(_id);
 
-        fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`)
+        fetch(`http://localhost:5000/equipments/${_id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-            
+20
             })
     }
 
     const handleSort = () => {
         const allEquipments = loadedEquipments;
         // console.log(allEquipments);
-
+        // console.log("clicked on sort");
         const sortAllEquipments = [...allEquipments].sort(function (a, b) {
             return a.price - b.price
         })
@@ -59,9 +62,8 @@ const AllEquipment = () => {
                     </div>
                 </Fade>
                 <Fade direction='left' duration={2000}>
-                    <div className="overflow-x-auto">
-                        <table className="table">
-                            {/* head */}
+                    {/* <div className="overflow-x-auto"> */}
+                    {/* <table className="table">
                             <thead>
                                 <tr className='border text-base'>
                                     <th>Sl</th>
@@ -74,7 +76,6 @@ const AllEquipment = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* row 1 */}
                                 {
                                     loadedEquipments?.map(equipment => <tr key={equipment._id} className='border font-medium'>
                                         <th>{loadedEquipments.indexOf(equipment) + 1}</th>
@@ -91,7 +92,13 @@ const AllEquipment = () => {
                                 }
 
                             </tbody>
-                        </table>
+                        </table> */}
+
+                    {/* </div> */}
+                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+                        {
+                            loadedEquipments.map(product => <ProductCard product={product} key={product._id} ></ProductCard>)
+                        }
                     </div>
                 </Fade>
             </div>

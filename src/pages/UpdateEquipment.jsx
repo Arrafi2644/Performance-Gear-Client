@@ -8,7 +8,7 @@ const UpdateEquipment = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     const equipment = useLoaderData()
-    const { _id, name, category, price, description, available, rating, customization, image, deliveryTime } = equipment
+    const { _id, name, category, price, description, available, rating, customization, image, deliveryTime, shortDescription } = equipment
 
     const handleUpdateEquipment = (e) => {
         e.preventDefault();
@@ -22,16 +22,17 @@ const UpdateEquipment = () => {
         const customization = form.customization.value;
         const image = form.image.value;
         const deliveryTime = form.deliveryTime.value;
+        const shortDescription = form.shortDescription.value;
         const description = form.description.value;
         const userEmail = user.email;
         const userName = user.displayName;
 
         // console.log(description);
 
-        const equipment = { name, category, price, available, rating, customization, image, deliveryTime, description, userEmail, userName }
+        const equipment = { name, category, price, available, rating, customization, image, deliveryTime, shortDescription, description, userEmail, userName }
         // console.log(equipment);
 
-        fetch(`https://performance-gear-server.vercel.app/equipments/${_id}`, {
+        fetch(`http://localhost:5000/equipments/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -72,68 +73,76 @@ const UpdateEquipment = () => {
                                     <label className="label">
                                         <span className="label-text">Equipment Name</span>
                                     </label>
-                                    <input defaultValue={name} name='name' type="text" placeholder="name" className="input input-bordered" required />
+                                    <input defaultValue={name} name='name' type="text" placeholder="name" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Category</span>
                                     </label>
-                                    <input defaultValue={category} name='category' type="text" placeholder="category" className="input input-bordered" required />
+                                    <input defaultValue={category} name='category' type="text" placeholder="category" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Image</span>
                                     </label>
-                                    <input defaultValue={image} name='image' type="text" placeholder="image url" className="input input-bordered" required />
+                                    <input defaultValue={image} name='image' type="text" placeholder="image url" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
-                                    <input defaultValue={price} name='price' type="text" placeholder="price" className="input input-bordered" required />
+                                    <input defaultValue={price} name='price' type="text" placeholder="price" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Rating</span>
                                     </label>
-                                    <input defaultValue={rating} name='rating' type="text" placeholder="rating" className="input input-bordered" required />
+                                    <input defaultValue={rating} name='rating' type="text" placeholder="rating" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Customization</span>
                                     </label>
-                                    <input defaultValue={customization} name='customization' type="text" placeholder="customization" className="input input-bordered" required />
+                                    <input defaultValue={customization} name='customization' type="text" placeholder="customization" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Delivery Time</span>
                                     </label>
-                                    <input defaultValue={deliveryTime} name='deliveryTime' type="text" placeholder="delivery time" className="input input-bordered" required />
+                                    <input defaultValue={deliveryTime} name='deliveryTime' type="text" placeholder="delivery time" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Available Quantity</span>
                                     </label>
-                                    <input defaultValue={available} name='available' type="text" placeholder="available quantity" className="input input-bordered" required />
+                                    <input defaultValue={available} name='available' type="text" placeholder="available quantity" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">User Name</span>
                                     </label>
-                                    <input defaultValue={user.displayName} readOnly name='userName' type="text" placeholder="available quantity" className="input input-bordered" required />
+                                    <input defaultValue={user?.displayName} readOnly name='userName' type="text" className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">User Email</span>
                                     </label>
-                                    <input defaultValue={user.email} readOnly name='userEmail' type="text" placeholder="available quantity" className="input input-bordered" required />
+                                    <input defaultValue={user?.email} readOnly name='userEmail' type="text"  className="input input-bordered text-slate-400" required />
                                 </div>
                                 <div className="form-control col-span-1 md:col-span-2">
                                     <label className="label">
-                                        <span className="label-text">Description</span>
+                                        <span className="label-text">Short Description:</span>
                                     </label>
-                                    {/* <input type="text"  name='description' placeholder='description' className="input input-bordered" required /> */}
-                                    <textarea defaultValue={description} name='description' className="textarea  resize-none border-gray-300" placeholder="description" required></textarea> 
+                                    {/* <input type="text"  className="input input-bordered" required /> */}
+                                    <textarea name='shortDescription' className="textarea h-8 resize-none border-gray-300 text-slate-400
+                             " defaultValue={shortDescription} placeholder="Short description" required></textarea>
+                                </div>
+                                <div className="form-control col-span-1 md:col-span-2">
+                                    <label className="label">
+                                        <span className="label-text ">Description</span>
+                                    </label>
+                            
+                                    <textarea defaultValue={description} name='description' className="textarea  resize-none border-gray-300 text-slate-400" placeholder="description" required></textarea>
                                 </div>
 
                                 <div className="form-control mt-6 col-span-1 md:col-span-2">
