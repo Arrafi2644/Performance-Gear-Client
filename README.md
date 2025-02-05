@@ -23,3 +23,29 @@ This is an e-commerce website for sports accessories, where customers can browse
 - **Database**: MongoDB
 - **State Management**: React Context API
 
+
+## 🛠 Installation
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/Arrafi2644/Performance-Gear-Client.git
+   cd performance-gear
+#### Install dependencies:
+npm install
+#### Set up environment variables:
+#### Create a .env file in the root directory and add the following:
+VITE_apiKey=your_api_key
+VITE_authDomain=your_auth_domain
+VITE_projectId=your_project_id
+VITE_storageBucket=your_storage_bucket
+VITE_messagingSenderId=your_messaging_sender_id
+VITE_appId=your_app_id
+
+#### Start the development server:
+npm run dev
+Build for production:
+
+#### Preview the production build:
+
+npm run preview
+
